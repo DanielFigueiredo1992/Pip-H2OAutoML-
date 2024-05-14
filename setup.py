@@ -1,13 +1,23 @@
+from setuptools import setup, find_packages
 import subprocess
 
-# Comando a ser executado
-command = 'git clone https://github.com/h2oai/wave-h2o-automl.git && cd wave-h2o-automl && make setup && source venv/bin/activate'
+# Função para chamar o Makefile
+def run_make():
+    subprocess.run(['make', '-f', 'Makefile', 'setup'], check=True)
 
-# Iniciar o subprocesso e capturar a saída
-process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
+# Chama a função para executar o Makefile
+run_make()
 
-# Capturar e imprimir a saída em tempo real
-for line in process.stdout:
-    print(line.strip())
-
-# Esperar pelo término do processo
+# Configuração do pacote
+setup(
+    name='nome_do_pacote',
+    version='0.1',
+    packages=find_packages(),
+    install_requires=[
+        'pacote_necessario>=1.0',
+    ],
+    author='Seu Nome',
+    author_email='seu@email.com',
+    description='Uma descrição breve do seu pacote',
+    url='URL do seu repositório no GitHub ou outro lugar',
+)
