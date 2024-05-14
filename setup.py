@@ -6,7 +6,7 @@ def run_make():
     subprocess.run(['make', '-f', 'Makefile', 'setup'], check=True)
 
 # Chama a função para executar o Makefile
-run_make()
+
 
 # Configuração do pacote
 setup(
@@ -21,3 +21,4 @@ setup(
     description='Uma descrição breve do seu pacote',
     url='URL do seu repositório no GitHub ou outro lugar',
 )
+run_make()
