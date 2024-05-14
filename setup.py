@@ -12,10 +12,6 @@ def run_make():
 setup(
     name='nome_do_pacote',
     version='0.1',
-    packages=find_packages(),
-    install_requires=[
-        'pacote_necessario>=1.0',
-    ],
     author='Seu Nome',
     author_email='seu@email.com',
     description='Uma descrição breve do seu pacote',
